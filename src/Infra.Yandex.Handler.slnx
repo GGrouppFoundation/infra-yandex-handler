@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Handler/Handler.csproj" />
+  <Project Path="Handler.Generator/Handler.Generator.csproj" />
+</Solution>
