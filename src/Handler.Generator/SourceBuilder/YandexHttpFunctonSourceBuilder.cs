@@ -27,8 +27,8 @@ internal static partial class YandexHttpFunctonSourceBuilder
 
             lineBuilder = lineBuilder
                 .Append('<')
-                .Append(resolver.HandlerType.DisplayedTypeName).Append(',')
-                .Append(resolver.InputType.DisplayedTypeName).Append(',')
+                .Append(resolver.HandlerType.DisplayedTypeName).Append(", ")
+                .Append(resolver.InputType.DisplayedTypeName).Append(", ")
                 .Append(resolver.OutputType.DisplayedTypeName)
                 .Append('>');
         }

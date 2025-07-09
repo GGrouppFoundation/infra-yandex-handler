@@ -10,7 +10,7 @@
     <NoWarn>$(NoWarn);IDE0130;IDE0305;CA1859</NoWarn>
     <RootNamespace>GGroupp.Infra</RootNamespace>
     <AssemblyName>GGroupp.Infra.Yandex.Handler</AssemblyName>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
