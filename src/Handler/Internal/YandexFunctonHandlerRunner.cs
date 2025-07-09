@@ -112,12 +112,18 @@ internal static class YandexFunctonHandlerRunner
 
         try
         {
-            var requestBody = JsonSerializer.Deserialize<YandexHttpRequest>(httpRequest, SerializerOptions).Body;
-            if (string.IsNullOrEmpty(requestBody))
+            var request = JsonSerializer.Deserialize<YandexHttpRequest>(httpRequest, SerializerOptions);
+            if (string.IsNullOrEmpty(request.Body))
             {
                 return Result.Success<TIn?>(default);
             }
 
+            if (request.IsBase64Encoded is false)
+            {
+                return JsonSerializer.Deserialize<TIn>(request.Body, SerializerOptions);
+            }
+
+            var requestBody = Convert.FromBase64String(request.Body);
             return JsonSerializer.Deserialize<TIn>(requestBody, SerializerOptions);
         }
         catch (Exception ex)
